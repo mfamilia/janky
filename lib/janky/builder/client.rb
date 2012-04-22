@@ -1,3 +1,5 @@
+require "logger"
+
 module Janky
   module Builder
     class Client
