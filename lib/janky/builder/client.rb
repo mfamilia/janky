@@ -23,7 +23,7 @@ module Janky
 
       def skip_build(build)
         is_skip_active = ENV["JANKY_SKIP_ACTIVE"]
-        if is_skip_active.nil? || is_skip_active.empty? || is_skip_active.downcase! != "true"
+        if is_skip_active.nil? || is_skip_active.empty? || is_skip_active.downcase != "true"
           return false
         end
 
