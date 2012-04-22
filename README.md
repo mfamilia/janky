@@ -1,6 +1,6 @@
 Janky
 =====
-                               testing skip
+
 This is Janky, a continuous integration server built on top of
 [Jenkins][], controlled by [Hubot][], and designed for [GitHub][].
 
