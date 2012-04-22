@@ -34,7 +34,11 @@ module Janky
           return false
         end
 
-        return build.commit_message.include? skip_flag
+        if build.commit_message.include? skip_flag
+          message = "Going skip on #{build.repo_name}/#{build.branch_name}"
+          ::Janky::ChatService.speak(message, build.room_id)
+          return true
+        end
       end
 
       # Retrieve the output of the given Build.
