@@ -28,7 +28,7 @@ module Janky
         end
 
         skip_flag = ENV["JANKY_SKIP_FLAG"]
-        if skip_flag.nil? || skip_flag.empty?
+        if skip_flag.nil? || skip_flag.empty? || build.commit_message.nil? || build.commit_message.empty?
           return false
         end
 
