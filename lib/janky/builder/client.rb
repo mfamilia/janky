@@ -28,7 +28,7 @@ module Janky
         end
 
         skip_flag = ENV["JANKY_SKIP_FLAG"]
-        if is_skip_active.downcase! == "true" && (skip_flag.nil? || skip_flag.empty?)
+        if !(is_skip_active.downcase! == "true") || skip_flag.nil? || skip_flag.empty?
           return false
         end
 
