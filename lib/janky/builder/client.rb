@@ -34,7 +34,7 @@ module Janky
           return false
         end
 
-        build.commit_message.includes? skip_flag
+        return build.commit_message.include? skip_flag
       end
 
       # Retrieve the output of the given Build.
