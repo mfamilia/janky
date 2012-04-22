@@ -35,10 +35,11 @@ module Janky
         end
 
         if build.commit_message.include? skip_flag
+          logger = Logger.new(STDOUT)
           message = "Going skip on #{build.repo_name}/#{build.branch_name}"
-          RAILS_DEFAULT_LOGGER.info "Sending skip message to chat service"
+          logger.info "Sending skip message to chat service"
           ::Janky::ChatService.speak(message, build.room_id)
-          RAILS_DEFAULT_LOGGER.info "Skip Build flag found...skipping build."
+          logger.info "Skip Build flag found...skipping build."
           return true
         end
       end
