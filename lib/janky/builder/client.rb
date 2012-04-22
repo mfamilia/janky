@@ -18,7 +18,9 @@ module Janky
       #
       # Returns the Jenkins build URL.
       def run(build)
-        Runner.new(@url, build, adapter).run unless skip_build build
+        unless skip_build build
+          Runner.new(@url, build, adapter).run
+        end
       end
 
       def skip_build(build)
